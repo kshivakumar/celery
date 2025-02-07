@@ -41,8 +41,8 @@ services:
           type: redis
           name: celery-redis
           property: connectionString
-      #- key: FLOWER_BASIC_AUTH
-      #  sync: false
+      - key: FLOWER_AUTH_PROVIDER
+        value: "flower.views.auth.GoogleAuth2LoginHandler"
       - key: FLOWER_OAUTH2_REDIRECT_URI
         sync: false
       - key: FLOWER_OAUTH2_CLIENT_ID
